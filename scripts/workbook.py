@@ -3,8 +3,8 @@ sys.path.insert(0,os.path.dirname(__file__))
 from cost import V
 from openpyxl import Workbook
 from openpyxl.styles import Font,PatternFill,Alignment
-ROOT='/workspace/txmailcost';T=open(ROOT+'/.dl_token').read().strip();C='2026-11-20'
-out=f'{ROOT}/dist/dl/{T}';os.makedirs(out,exist_ok=True)
+ROOT='/workspace/txmailcost';T=open(ROOT+'/private/.dl_token').read().strip();C='2026-11-20'
+out=f'{ROOT}/private/{T}';os.makedirs(out,exist_ok=True)
 rows=[]
 for v in V:
     for p in v['plans']:

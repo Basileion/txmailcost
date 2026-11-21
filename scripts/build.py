@@ -5,7 +5,6 @@ ROOT = '/workspace/txmailcost'; D = ROOT + '/dist'
 SITE = os.environ.get('SITE','https://basileion.github.io/txmailcost')
 BASE = os.environ.get('BASE','/txmailcost')
 CHECKED = '2026-11-20'
-TOKEN = open(ROOT + '/.dl_token').read().strip()
 PAY = os.environ.get('PAYLINK', '').strip()  # Stripe payment link, filled after creation
 VOLS = [10000, 50000, 100000, 250000, 500000, 1000000]
 BYID = {v['id']: v for v in V}
@@ -206,16 +205,15 @@ page('/workbook/', 'Transactional Email Pricing Workbook (XLSX + CSV) | TxMailCo
 <ul><li>XLSX (Excel, Google Sheets, Numbers) plus a CSV</li><li>Calculator sheet: enter a volume, see each provider's cheapest plan and bill</li><li>Every row links to the vendor page it came from</li><li>Same data as this site, in a form you can paste into a budget or vendor review</li></ul>
 {cta}<p class="note">The site and <a href="/api/plans.json">JSON data</a> stay free. The workbook is for people who want it as a file.</p>""")
 
-os.makedirs(D + f'/dl/{TOKEN}', exist_ok=True)
-page(f'/dl/{TOKEN}/', 'Your TxMailCost workbook', 'Download', f'<h1>Thanks. Your downloads:</h1><p><a class="btn" href="/dl/{TOKEN}/txmailcost-workbook-{CHECKED}.xlsx">Download XLSX</a> &nbsp; <a href="/dl/{TOKEN}/txmailcost-plans-{CHECKED}.csv">Download CSV</a></p><p class="mut">Bookmark this page. Questions: basileion.ops@gmail.com</p>', noindex=True)
+# Download page is NOT built into dist: workbook files live only in /workspace/txmailcost/private/ (gitignored).
 
 # ---------- data / seo files
 os.makedirs(D + '/api', exist_ok=True)
 json.dump({'checked': CHECKED, 'unit': 'USD per month; overage USD per 1,000 emails', 'providers': DATA}, open(D + '/api/plans.json', 'w'), indent=1)
-open(D + '/robots.txt', 'w').write(f'User-agent: *\nDisallow: /dl/\nSitemap: {SITE}/sitemap.xml\n')
+open(D + '/robots.txt', 'w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
 open(D + '/sitemap.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{u}</loc><lastmod>{CHECKED}</lastmod></url>' for u in URLS) + '</urlset>')
 open(D + '/llms.txt', 'w').write(f'# TxMailCost\n> Published transactional email API pricing for {len(V)} providers, normalized to monthly cost by volume. Checked {CHECKED}.\n\n- Data: {SITE}/api/plans.json\n- Cost at 100k/mo: {SITE}/cost/100000-emails-per-month/\n- SES Essentials default: {SITE}/amazon-ses-essentials-plan/\n' + ''.join(f'- {v["name"]}: {SITE}/vendors/{v["id"]}/ (source {v["source"]})\n' for v in V))
-open(D + '/_headers', 'w').write('/dl/*\n  X-Robots-Tag: noindex, nofollow\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n')
+open(D + '/_headers', 'w').write('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n')
 page('/404.html'.replace('.html', '/'), 'Not found | TxMailCost', 'Not found', '<h1>Page not found</h1><p><a href="/">Back to the calculator</a></p>', noindex=True)
 shutil.move(D + '/404/index.html', D + '/404.html'); os.rmdir(D + '/404')
 K=open(ROOT+'/indexnow.key').read().strip();open(D+f'/{K}.txt','w').write(K)
