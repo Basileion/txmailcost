@@ -47,7 +47,7 @@ def page(path, title, desc, body, schema=None, noindex=False):
 <main class="w">{body}</main>
 <footer><div class="w"><p><b>TxMailCost</b> tracks published transactional email prices for {len(V)} providers. Every price links to the vendor page it came from. Last checked {CHECKED}. Not affiliated with any provider; no paid placements. Verify on the vendor's page before you buy.</p>
 <p><a href="/about/">Methodology</a> · <a href="/api/plans.json">JSON data</a> · <a href="/changes/feed.xml">RSS</a> · <a href="/workbook/">Workbook</a> · <a href="mailto:basileion.ops@gmail.com?subject=TxMailCost%20correction">Report a wrong price</a></p>
-<p>More sourced pricing ledgers: <a href="https://vpsledger.pages.dev/">VPSLedger</a> (VPS true monthly cost) · <a href="https://authcost.pages.dev/">AuthCost</a> (auth and identity pricing) · <a href="https://o11y-watch.pages.dev/directory">O11y Watch</a> (observability free tiers)</p></div></footer></body></html>"""
+<p>More pricing trackers: <a href="https://basileion.github.io/postgresledger/">PostgresLedger</a> (managed Postgres cost) · <a href="https://vpsledger.pages.dev/">VPSLedger</a> (VPS true monthly cost) · <a href="https://authcost.pages.dev/">AuthCost</a> (auth and identity pricing)</p></div></footer></body></html>"""
     doc = doc.replace('href="/', 'href="'+BASE+'/').replace("'/vendors/'", "'"+BASE+"/vendors/'")
     out = D + path + ('index.html' if path.endswith('/') else '')
     os.makedirs(os.path.dirname(out), exist_ok=True)
