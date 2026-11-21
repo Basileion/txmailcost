@@ -218,4 +218,5 @@ open(D + '/llms.txt', 'w').write(f'# TxMailCost\n> Published transactional email
 open(D + '/_headers', 'w').write('/dl/*\n  X-Robots-Tag: noindex, nofollow\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n')
 page('/404.html'.replace('.html', '/'), 'Not found | TxMailCost', 'Not found', '<h1>Page not found</h1><p><a href="/">Back to the calculator</a></p>', noindex=True)
 shutil.move(D + '/404/index.html', D + '/404.html'); os.rmdir(D + '/404')
+K=open(ROOT+'/indexnow.key').read().strip();open(D+f'/{K}.txt','w').write(K)
 print('pages', len(URLS))
