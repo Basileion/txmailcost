@@ -1,0 +1,448 @@
+{
+ "checked": "2026-11-20",
+ "unit": "USD per month; overage USD per 1,000 emails",
+ "providers": [
+  {
+   "vendor": "Amazon SES",
+   "id": "amazon-ses",
+   "source": "https://aws.amazon.com/ses/pricing/",
+   "checked": "2026-11-20",
+   "plans": [
+    {
+     "plan": "A la carte",
+     "base": 0,
+     "incl": 0,
+     "over": 0.1
+    },
+    {
+     "plan": "Essentials plan (new-account default)",
+     "base": 0,
+     "incl": 0,
+     "over": 0.16
+    },
+    {
+     "plan": "Pro plan",
+     "base": 105,
+     "incl": 0,
+     "over": 0.22
+    }
+   ]
+  },
+  {
+   "vendor": "Resend",
+   "id": "resend",
+   "source": "https://resend.com/pricing",
+   "checked": "2026-11-20",
+   "plans": [
+    {
+     "plan": "Free",
+     "base": 0,
+     "incl": 3000,
+     "over": null
+    },
+    {
+     "plan": "Pro 50k",
+     "base": 20,
+     "incl": 50000,
+     "over": 0.9
+    },
+    {
+     "plan": "Pro 100k",
+     "base": 35,
+     "incl": 100000,
+     "over": 0.9
+    },
+    {
+     "plan": "Scale 100k",
+     "base": 90,
+     "incl": 100000,
+     "over": 0.9
+    },
+    {
+     "plan": "Scale 200k",
+     "base": 160,
+     "incl": 200000,
+     "over": 0.8
+    },
+    {
+     "plan": "Scale 500k",
+     "base": 350,
+     "incl": 500000,
+     "over": 0.7
+    },
+    {
+     "plan": "Scale 1M",
+     "base": 650,
+     "incl": 1000000,
+     "over": 0.65
+    },
+    {
+     "plan": "Scale 1.5M",
+     "base": 825,
+     "incl": 1500000,
+     "over": 0.52
+    },
+    {
+     "plan": "Scale 2.5M",
+     "base": 1150,
+     "incl": 2500000,
+     "over": 0.46
+    }
+   ]
+  },
+  {
+   "vendor": "Postmark",
+   "id": "postmark",
+   "source": "https://postmarkapp.com/pricing",
+   "checked": "2026-11-20",
+   "plans": [
+    {
+     "plan": "Free",
+     "base": 0,
+     "incl": 100,
+     "over": null
+    },
+    {
+     "plan": "Basic 10k",
+     "base": 15,
+     "incl": 10000,
+     "over": 1.8
+    },
+    {
+     "plan": "Basic 50k",
+     "base": 55,
+     "incl": 50000,
+     "over": 1.8
+    },
+    {
+     "plan": "Basic 125k",
+     "base": 115,
+     "incl": 125000,
+     "over": 1.8
+    },
+    {
+     "plan": "Basic 300k",
+     "base": 245,
+     "incl": 300000,
+     "over": 1.7
+    },
+    {
+     "plan": "Basic 700k",
+     "base": 455,
+     "incl": 700000,
+     "over": 1.7
+    },
+    {
+     "plan": "Basic 1.5M",
+     "base": 775,
+     "incl": 1500000,
+     "over": 1.7
+    },
+    {
+     "plan": "Pro 10k",
+     "base": 16.5,
+     "incl": 10000,
+     "over": 1.3
+    },
+    {
+     "plan": "Pro 50k",
+     "base": 60.5,
+     "incl": 50000,
+     "over": 1.3
+    },
+    {
+     "plan": "Pro 125k",
+     "base": 126.5,
+     "incl": 125000,
+     "over": 1.3
+    },
+    {
+     "plan": "Pro 300k",
+     "base": 269.5,
+     "incl": 300000,
+     "over": 1.25
+    },
+    {
+     "plan": "Pro 700k",
+     "base": 500.5,
+     "incl": 700000,
+     "over": 1.25
+    },
+    {
+     "plan": "Pro 1.5M",
+     "base": 852.5,
+     "incl": 1500000,
+     "over": 1.2
+    },
+    {
+     "plan": "Platform 10k",
+     "base": 18,
+     "incl": 10000,
+     "over": 1.2
+    },
+    {
+     "plan": "Platform 50k",
+     "base": 66,
+     "incl": 50000,
+     "over": 1.2
+    },
+    {
+     "plan": "Platform 125k",
+     "base": 138,
+     "incl": 125000,
+     "over": 1.2
+    },
+    {
+     "plan": "Platform 300k",
+     "base": 294,
+     "incl": 300000,
+     "over": 1.15
+    },
+    {
+     "plan": "Platform 700k",
+     "base": 546,
+     "incl": 700000,
+     "over": 1.15
+    },
+    {
+     "plan": "Platform 1.5M",
+     "base": 930,
+     "incl": 1500000,
+     "over": 1.15
+    }
+   ]
+  },
+  {
+   "vendor": "Twilio SendGrid",
+   "id": "sendgrid",
+   "source": "https://www.twilio.com/en-us/products/email-api/pricing",
+   "checked": "2026-11-20",
+   "plans": [
+    {
+     "plan": "Essentials 50K",
+     "base": 19.95,
+     "incl": 50000,
+     "over": 1.3
+    },
+    {
+     "plan": "Pro 100K",
+     "base": 89.95,
+     "incl": 100000,
+     "over": 1.1
+    }
+   ]
+  },
+  {
+   "vendor": "Mailgun",
+   "id": "mailgun",
+   "source": "https://www.mailgun.com/pricing/",
+   "checked": "2026-11-20",
+   "plans": [
+    {
+     "plan": "Basic 10k",
+     "base": 15,
+     "incl": 10000,
+     "over": 1.8
+    },
+    {
+     "plan": "Foundation 50k",
+     "base": 35,
+     "incl": 50000,
+     "over": 1.3
+    },
+    {
+     "plan": "Scale 100k",
+     "base": 90,
+     "incl": 100000,
+     "over": 1.1
+    }
+   ]
+  },
+  {
+   "vendor": "MailerSend",
+   "id": "mailersend",
+   "source": "https://www.mailersend.com/pricing",
+   "checked": "2026-11-20",
+   "plans": [
+    {
+     "plan": "Free",
+     "base": 0,
+     "incl": 500,
+     "over": null
+    },
+    {
+     "plan": "Hobby 5k",
+     "base": 7,
+     "incl": 5000,
+     "over": 1.5
+    },
+    {
+     "plan": "Starter 50k",
+     "base": 35,
+     "incl": 50000,
+     "over": 1.3
+    },
+    {
+     "plan": "Starter 100k",
+     "base": 68,
+     "incl": 100000,
+     "over": 1.3
+    },
+    {
+     "plan": "Starter 250k",
+     "base": 162.5,
+     "incl": 250000,
+     "over": 1.1
+    },
+    {
+     "plan": "Starter 500k",
+     "base": 325,
+     "incl": 500000,
+     "over": 1.1
+    },
+    {
+     "plan": "Starter 1M",
+     "base": 600,
+     "incl": 1000000,
+     "over": 1.0
+    },
+    {
+     "plan": "Professional 50k",
+     "base": 110,
+     "incl": 50000,
+     "over": 1.3
+    },
+    {
+     "plan": "Professional 100k",
+     "base": 140,
+     "incl": 100000,
+     "over": 1.3
+    },
+    {
+     "plan": "Professional 250k",
+     "base": 275,
+     "incl": 250000,
+     "over": 1.0
+    },
+    {
+     "plan": "Professional 500k",
+     "base": 525,
+     "incl": 500000,
+     "over": 0.8
+    },
+    {
+     "plan": "Professional 1M",
+     "base": 1000,
+     "incl": 1000000,
+     "over": 0.6
+    },
+    {
+     "plan": "Professional 1.5M",
+     "base": 1350,
+     "incl": 1500000,
+     "over": 0.6
+    },
+    {
+     "plan": "Professional 2M",
+     "base": 1600,
+     "incl": 2000000,
+     "over": 0.5
+    }
+   ]
+  },
+  {
+   "vendor": "Mailtrap",
+   "id": "mailtrap",
+   "source": "https://mailtrap.io/pricing/",
+   "checked": "2026-11-20",
+   "plans": [
+    {
+     "plan": "Free",
+     "base": 0,
+     "incl": 4000,
+     "over": null
+    },
+    {
+     "plan": "Basic 10k",
+     "base": 15,
+     "incl": 10000,
+     "over": null
+    },
+    {
+     "plan": "Basic 50k",
+     "base": 20,
+     "incl": 50000,
+     "over": null
+    },
+    {
+     "plan": "Basic 100k",
+     "base": 30,
+     "incl": 100000,
+     "over": null
+    },
+    {
+     "plan": "Business 100k",
+     "base": 85,
+     "incl": 100000,
+     "over": null
+    },
+    {
+     "plan": "Business 250k",
+     "base": 200,
+     "incl": 250000,
+     "over": null
+    },
+    {
+     "plan": "Business 500k",
+     "base": 300,
+     "incl": 500000,
+     "over": null
+    },
+    {
+     "plan": "Business 750k",
+     "base": 450,
+     "incl": 750000,
+     "over": null
+    },
+    {
+     "plan": "Enterprise 1.5M",
+     "base": 750,
+     "incl": 1500000,
+     "over": null
+    },
+    {
+     "plan": "Enterprise 2.5M",
+     "base": 1250,
+     "incl": 2500000,
+     "over": null
+    }
+   ]
+  },
+  {
+   "vendor": "SMTP2GO",
+   "id": "smtp2go",
+   "source": "https://www.smtp2go.com/pricing/",
+   "checked": "2026-11-20",
+   "plans": [
+    {
+     "plan": "Free",
+     "base": 0,
+     "incl": 1000,
+     "over": null
+    },
+    {
+     "plan": "Starter 10k",
+     "base": 10,
+     "incl": 10000,
+     "over": 1.0
+    },
+    {
+     "plan": "Professional 100k",
+     "base": 75,
+     "incl": 100000,
+     "over": 0.85
+    }
+   ]
+  }
+ ]
+}

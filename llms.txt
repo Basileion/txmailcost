@@ -1,0 +1,14 @@
+# TxMailCost
+> Published transactional email API pricing for 8 providers, normalized to monthly cost by volume. Checked 2026-11-20.
+
+- Data: https://basileion.github.io/txmailcost/api/plans.json
+- Cost at 100k/mo: https://basileion.github.io/txmailcost/cost/100000-emails-per-month/
+- SES Essentials default: https://basileion.github.io/txmailcost/amazon-ses-essentials-plan/
+- Amazon SES: https://basileion.github.io/txmailcost/vendors/amazon-ses/ (source https://aws.amazon.com/ses/pricing/)
+- Resend: https://basileion.github.io/txmailcost/vendors/resend/ (source https://resend.com/pricing)
+- Postmark: https://basileion.github.io/txmailcost/vendors/postmark/ (source https://postmarkapp.com/pricing)
+- Twilio SendGrid: https://basileion.github.io/txmailcost/vendors/sendgrid/ (source https://www.twilio.com/en-us/products/email-api/pricing)
+- Mailgun: https://basileion.github.io/txmailcost/vendors/mailgun/ (source https://www.mailgun.com/pricing/)
+- MailerSend: https://basileion.github.io/txmailcost/vendors/mailersend/ (source https://www.mailersend.com/pricing)
+- Mailtrap: https://basileion.github.io/txmailcost/vendors/mailtrap/ (source https://mailtrap.io/pricing/)
+- SMTP2GO: https://basileion.github.io/txmailcost/vendors/smtp2go/ (source https://www.smtp2go.com/pricing/)
