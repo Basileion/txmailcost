@@ -5,7 +5,7 @@ ROOT = '/workspace/txmailcost'; D = ROOT + '/dist'
 SITE = os.environ.get('SITE','https://basileion.github.io/txmailcost')
 BASE = os.environ.get('BASE','/txmailcost')
 CHECKED = '2026-11-20'
-PAY = os.environ.get('PAYLINK', '').strip()  # Stripe payment link, filled after creation
+PAY = os.environ.get('PAYLINK', 'https://buy.stripe.com/4gMeVfcAk8td7FW7sJcjS03').strip()  # Stripe payment link (plink_1UftIaS6pHTHiBjbNuafxfDm)
 VOLS = [10000, 50000, 100000, 250000, 500000, 1000000]
 BYID = {v['id']: v for v in V}
 e = html.escape
@@ -199,7 +199,7 @@ page('/about/', 'Methodology | TxMailCost', 'How TxMailCost reads and normalizes
 <p>Found a wrong price? <a href="mailto:basileion.ops@gmail.com?subject=TxMailCost%20correction">Email a correction</a> with the vendor link.</p>""")
 
 # ---------- workbook (product) + dl
-cta = f'<p><a class="btn" href="{PAY}">Buy the workbook: $19</a></p><p class="note">One-time payment via Stripe. Download link shown right after checkout.</p>' if PAY else '<p class="mut">Checkout coming shortly.</p>'
+cta = f'<p><a class="btn" href="{PAY}">Buy the workbook: $19</a></p><p class="note">One-time payment via Stripe. The XLSX and CSV are emailed to your checkout address within 1 business day.</p>' if PAY else '<p class="mut">Checkout coming shortly.</p>'
 page('/workbook/', 'Transactional Email Pricing Workbook (XLSX + CSV) | TxMailCost', f'Spreadsheet of {sum(len(v["plans"]) for v in V)} transactional email plans from {len(V)} providers, with sources and a volume calculator.', f"""<p class="eb" style="margin-top:34px">Workbook · snapshot {CHECKED}</p><h1>The transactional email pricing workbook</h1>
 <p class="lede">All {sum(len(v["plans"]) for v in V)} plan rows from {len(V)} providers in one spreadsheet: base price, included emails, overage per 1,000, source URL and check date. A calculator sheet prices any volume across every provider with live formulas.</p>
 <ul><li>XLSX (Excel, Google Sheets, Numbers) plus a CSV</li><li>Calculator sheet: enter a volume, see each provider's cheapest plan and bill</li><li>Every row links to the vendor page it came from</li><li>Same data as this site, in a form you can paste into a budget or vendor review</li></ul>
